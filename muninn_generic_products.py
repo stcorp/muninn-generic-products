@@ -24,7 +24,8 @@ class GenericProduct(object):
 
     def __init__(self, product_type, filename_pattern):
         self.use_enclosing_directory = False
-        self.use_hash = False
+        self.use_hash = False  # For compatibility with muninn versions before 5.1
+        self.hash_type = None
         self.product_type = product_type
         self.filename_pattern = filename_pattern
 
