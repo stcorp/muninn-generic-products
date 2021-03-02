@@ -42,16 +42,17 @@ class GenericProduct(object):
 
     def archive_path(self, properties):
         name_attrs = self.parse_filename(properties.core.physical_name)
+        validity_start = properties.core.validity_start
         parts = [self.product_type]
         if 'validity_month' in name_attrs:
-            parts.append(str(properties.core.validity_start.year))
+            parts.append(validity_start.strftime("%Y"))
         elif 'validity_day' in name_attrs:
-            parts.append(str(properties.core.validity_start.year))
-            parts.append(str(properties.core.validity_start.month))
+            parts.append(validity_start.strftime("%Y"))
+            parts.append(validity_start.strftime("%m"))
         elif 'validity_start' in name_attrs:
-            parts.append(str(properties.core.validity_start.year))
-            parts.append(str(properties.core.validity_start.month))
-            parts.append(str(properties.core.validity_start.day))
+            parts.append(validity_start.strftime("%Y"))
+            parts.append(validity_start.strftime("%m"))
+            parts.append(validity_start.strftime("%d"))
         return os.path.join(*parts)
 
     def get_validity_range(self, name_attrs):
