@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="muninn-generic-products",
-    version="1.1",
+    version="1.1.1",
     description="Generic Muninn product type extension",
     url="https://github.com/stcorp/muninn-generic-products",
     author="S[&]T",

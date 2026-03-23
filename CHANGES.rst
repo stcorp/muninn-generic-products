@@ -1,3 +1,8 @@
+1.1.1 2026-03-23
+~~~~~~~~~~~~~~~~
+
+* Fix archive_path determination if validity_start property was not set.
+
 1.1 2021-11-03
 ~~~~~~~~~~~~~~
 
